@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Recent Contacts" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <template if:true={welcomeMessage.data}>
+                <p class="slds-text-body_small slds-text-color_success slds-m-bottom_small">
+                    <em>{welcomeMessage.data}</em>
+                </p>
+            </template>
+
+            <template if:true={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <div key={contact.Id} class="slds-box slds-box_x-small slds-m-bottom_small">
+                        <p><strong>{contact.Name}</strong></p>
+                        <p>{contact.Title}</p>
+                        <p><lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone></p>
+                    </div>
+                </template>
+            </template>
+            <template if:true={contacts.error}>
+                <p>Error loading contacts.</p>
+            </template>
+            <template if:false={contacts.data}>
+                <lightning-spinner alternative-text="Loading Contacts..." size="small"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>
