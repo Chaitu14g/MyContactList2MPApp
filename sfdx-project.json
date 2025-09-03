@@ -14,6 +14,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "64.0",
   "packageAliases": {
-    "My Contact List App": "0HoWU0000000iU50AI"
+    "My Contact List App": "0HoWU0000000iU50AI",
+    "My Contact List App@0.1.0-2": "04tWU000000AYGXYA4"
   }
 }
